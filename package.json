@@ -1,0 +1,25 @@
+{
+  "name": "rminions",
+  "version": "1.1.0",
+  "description": "An R package for computing across servers with Redis",
+  "main": "index.js",
+  "directories": {
+    "man": "man"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PieceMaker/rminions.git"
+  },
+  "author": "Jonathan Adams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PieceMaker/rminions/issues"
+  },
+  "homepage": "https://github.com/PieceMaker/rminions#readme",
+  "dependencies": {
+    "reveal.js": "^3.3.0"
+  }
+}
