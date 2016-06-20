@@ -1,0 +1,16 @@
+.reveal figure {
+    margin-top: 45px;
+}
+
+.reveal figcaption {
+    margin-top: -15px;
+    font-size: medium;
+    font-weight: normal;
+}
+
+.reveal code {
+    border: 1px solid rgba(255,255,255,0.1);
+    background: #202020;
+    padding: 0 0.3em;
+    display: inline-block;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>rminions</title>
+        <meta name="description" content="A presentation showing how to run R tasks across multiple servers using Redis.">
+        <meta name="author" content="Jonathan Adams">
+
+        <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!--Slide 1-->
+                <section>
+                    <h3>Grid Computing in R with Redis Message Queues</h3>
+                    <h5>Jonathan Adams</h5>
+                    <p>June 29th, 2016</p>
+                </section>
+
+                <!--Slide 2-->
+                <section>
+                    <h3>Background</h3>
+                    <!--Slide 2.1-->
+                    <section>
+                        <ul>
+                            <li>
+                                Common for me to run lots of jobs in R
+                                <ul>
+                                    <li>Fitting complex models</li>
+                                    <li>Running simulations from a CAT model</li>
+                                    <li>Numerical integration of posterior distributions</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <!--Slide 2.2-->
+                    <section>
+                        <ul>
+                            <li>First used <code>snow</code> package.</li>
+                            <li>
+                                Worked as follows:
+                                <ol>
+                                    <li>Bundle code into function</li>
+                                    <li>Create cluster of worker nodes</li>
+                                    <li>Spread your jobs among the nodes before processing</li>
+                                    <li>Wait for it to finish or throw an error</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </section>
+                    <!--Slide 2.3-->
+                    <section>
+                        <ul>
+                            <li>Pros</li>
+                            <ul>
+                                <li>Run multiple jobs simultaneously</li>
+                                <li>Multiple methods of cluster creation</li>
+                                <li>Could load-balance some clusters</li>
+                            </ul>
+                            <li>Cons</li>
+                            <ul>
+                                <li>Not all cluster could be load-balanced</li>
+                                <li>Common to be waiting  for one or two nodes to finish</li>
+                                <li>Cluster communication was expensive</li>
+                                <li>Poorly handled errors could cause loss of all work</li>
+                                <li>Results not available until all processing finished</li>
+                                <li>Could not increase size of cluster mid-processing</li>
+                            </ul>
+                        </ul>
+                    </section>
+                </section>
+
+                <!--Slide 3-->
+                <section>
+                    <h3>Ways to Improve</h3>
+                    <ul>
+                        <li>Allow quick scaling up and down</li>
+                        <li>Use any number of servers</li>
+                        <li>Automatically load-balance</li>
+                        <li>Minimize communication expense</li>
+                        <li>Access results as they are available</li>
+                        <li>Separate errors for easy access</li>
+                    </ul>
+                </section>
+
+                <!--Slide 4-->
+                <section>
+                    <h3>Redis</h3>
+                    <ul>
+                        <li>Redis is an in-memory NoSQL database</li>
+                        <li>All objects are strings</li>
+                        <li>Allows clients to wait for messages to be available</li>
+                        <li>
+                            Bindings made available in R through <code>rredis</code> package
+                            <ul>
+                                <li>Stores any R object by serializing</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </body>
+
+    <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+    <script src="node_modules/reveal.js/js/reveal.js"></script>
+    <script src="node_modules/reveal.js/plugin/math/math.js"></script>
+
+    <script>
+        Reveal.initialize({
+            src: "node_modules/reveal.js/plugin/math/math.js",
+            async: true
+        });
+    </script>
+</html>
