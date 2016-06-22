@@ -93,7 +93,12 @@
                     <ul>
                         <li>Redis is an in-memory NoSQL database</li>
                         <li>All objects are strings</li>
-                        <li>Allows clients to wait for messages to be available</li>
+                        <li>
+                            Allows clients to wait for messages to be available
+                            <ul>
+                                <li>Messages are queued and clients are first-come-first-served</li>
+                            </ul>
+                        </li>
                         <li>
                             Bindings made available in R through <code>rredis</code> package
                             <ul>
@@ -101,6 +106,18 @@
                             </ul>
                         </li>
                     </ul>
+                </section>
+
+                <!--Slide 5-->
+                <section data-transition="fade-in">
+                    <h3>Flowchart</h3>
+                    <img src="./images/twoMinionsDiagram.png" height="550">
+                </section>
+
+                <!--Slide 6-->
+                <section data-transition="fade-in">
+                    <h3>Flowchart</h3>
+                    <img src="./images/threeMinionsDiagram.png" height="550" style="{left: -100px;}">
                 </section>
             </div>
         </div>
