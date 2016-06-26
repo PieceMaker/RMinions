@@ -16,9 +16,10 @@
             <div class="slides">
                 <!--Slide 1-->
                 <section>
-                    <h3>Grid Computing in R with Redis Message Queues</h3>
-                    <h5>Jonathan Adams</h5>
-                    <p>June 29th, 2016</p>
+                    <h3>Grid Computing in R </h3>
+                    <h4>with Redis Message Queues</h4>
+                    <p>Jonathan Adams</p>
+                    <p>useR! 2016</p>
                 </section>
 
                 <!--Slide 2-->
@@ -65,9 +66,8 @@
                             <ul>
                                 <li>Not all cluster could be load-balanced</li>
                                 <li>Common to be waiting  for one or two nodes to finish</li>
-                                <li>Cluster communication was expensive</li>
                                 <li>Poorly handled errors could cause loss of all work</li>
-                                <!--<li>Reproducing errors was complicated</li>-->
+                                <li>Reproducing errors was complicated</li>
                                 <li>Results not available until all processing finished</li>
                                 <li>Could not increase size of cluster mid-processing</li>
                             </ul>
@@ -82,9 +82,8 @@
                         <li>Allow quick scaling up and down</li>
                         <li>Use any number of servers</li>
                         <li>Automatically load-balance</li>
-                        <li>Minimize communication expense</li>
                         <li>Access results as they are available</li>
-                        <li>Separate errors for easy access</li>
+                        <li>Separate errors for easy access and reproducibility</li>
                     </ul>
                 </section>
 
@@ -98,6 +97,7 @@
                             Allows clients to wait for messages to be available
                             <ul>
                                 <li>Messages are queued and clients are first-come-first-served</li>
+                                <li>Pop from and push to queues just like an array</li>
                             </ul>
                         </li>
                         <li>
