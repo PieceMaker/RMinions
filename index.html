@@ -96,7 +96,9 @@
                         <li>
                             Allows clients to wait for messages to be available
                             <ul>
-                                <li>Messages are queued and clients are first-come-first-served</li>
+                                <li>Messages are queued and clients are
+                                    <br>first-come-first-served
+                                </li>
                                 <li>Pop from and push to queues just like an array</li>
                             </ul>
                         </li>
@@ -146,13 +148,31 @@
                 <!--Slide 9-->
                 <section>
                     <h3>Conclusion</h3>
-                    <ul>
-                        <li>This method satisfies listed improvements</li>
-                        <li>Easily deployed in the cloud via Docker</li>
-                        <li>Can communicate with all servers via PUB/SUB</li>
-                        <li>Available on GitHub <a href="https://github.com/PieceMaker/rminions">https://github.com/PieceMaker/rminions</a></li>
-                        <li>Similar package: <code>doRedis</code></li>
-                    </ul>
+                    <!--Slide 9.1-->
+                    <section>
+                        <ul>
+                            <li>
+                                Improvements revisited
+                                <ul>
+                                    <li>Allow quick scaling up and down</li>
+                                    <li>Use any number of servers</li>
+                                    <li>Automatically load-balance</li>
+                                    <li>Access results as they are available</li>
+                                    <li>Separate errors for easy access and reproducibility</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <!--Slide 9.2-->
+                    <section>
+                        <ul>
+                            <li>Available on GitHub <a href="https://github.com/PieceMaker/rminions">https://github.com/PieceMaker/rminions</a></li>
+                            <li>Easily deployed in the cloud via Docker</li>
+                            <li>Can communicate with all servers via PUB/SUB</li>
+                            <li>Can update worker to accept requests from other languages</li>
+                            <li>Similar package: <code>doRedis</code></li>
+                        </ul>
+                    </section>
                 </section>
             </div>
         </div>
